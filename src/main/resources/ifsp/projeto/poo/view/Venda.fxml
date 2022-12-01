@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.poo.controller.VendaController">
+   <children>
+      <BorderPane fx:id="border" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0">
+         <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #547aa7;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="55.0" prefWidth="1200.0" style="-fx-background-color: #003f6b;" text="      LUIS ROYO - PDV" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_caixaAberto" alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="90.0" prefHeight="55.0" prefWidth="1160.0" style="-fx-background-color: white;" text="Caixa Aberto" textFill="#003f6b">
+                     <font>
+                        <Font name="Arial Bold" size="36.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Pane layoutX="20.0" layoutY="158.0" prefHeight="340.0" prefWidth="165.0" style="-fx-background-color: white;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="159.0" layoutX="2.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/imagem-compra.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="txt_codigoDeBarra" alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="158.0" prefHeight="80.0" prefWidth="165.0">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="199.0" layoutY="158.0" prefHeight="35.0" prefWidth="165.0" style="-fx-background-color: #003f6b;" text="CÓDIGO DE BARRA" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_valorUnitarioItem" alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="290.0" prefHeight="80.0" prefWidth="165.0" style="-fx-background-color: white;" text="0,00" textFill="#003f6b">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="199.0" layoutY="290.0" prefHeight="35.0" prefWidth="165.0" style="-fx-background-color: #003f6b;" text="VALOR UNITÁRIO" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_totalItem" alignment="BOTTOM_RIGHT" layoutX="199.0" layoutY="418.0" prefHeight="80.0" prefWidth="165.0" style="-fx-background-color: white;" text="0,00" textFill="#003f6b">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="199.0" layoutY="418.0" prefHeight="35.0" prefWidth="165.0" style="-fx-background-color: #003f6b;" text="TOTAL DO ITEM" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextArea layoutX="20.0" layoutY="518.0" prefHeight="73.0" prefWidth="165.0" />
+                  <TextArea layoutX="199.0" layoutY="518.0" prefHeight="73.0" prefWidth="165.0" />
+                  <Button fx:id="btn_finalizarVenda" layoutX="20.0" layoutY="621.0" mnemonicParsing="false" onAction="#finalizaCompra" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #003f6b;" text="F2-FINALIZAR" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn_cancelarVenda" layoutX="224.0" layoutY="621.0" mnemonicParsing="false" onAction="#cancelaCompra" prefHeight="50.0" prefWidth="140.0" style="-fx-background-color: #003f6b;" text="F6-CANCELAR" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="tabela_itensSelecionados" editable="true" layoutX="378.0" layoutY="158.0" prefHeight="294.0" prefWidth="804.0">
+                     <columns>
+                        <TableColumn fx:id="col_codBarra" prefWidth="111.0" text="COD BARRA" />
+                        <TableColumn fx:id="col_descricao" prefWidth="378.0" text="DESCRIÇÃO" />
+                        <TableColumn fx:id="col_qtdProduto" minWidth="7.0" prefWidth="82.0" text="QTD." />
+                        <TableColumn fx:id="col_valorUnitario" prefWidth="108.0" text="VALOR UN." />
+                        <TableColumn fx:id="col_subtotalItem" minWidth="7.0" prefWidth="124.0" text="SUBTOTAL" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="lbl_subtotalCompra" alignment="BOTTOM_RIGHT" layoutX="378.0" layoutY="468.0" prefHeight="98.0" prefWidth="805.0" style="-fx-background-color: white;" text="0,00" textFill="#003f6b">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="378.0" layoutY="468.0" prefHeight="35.0" prefWidth="805.0" style="-fx-background-color: #003f6b;" text="SUBTOTAL" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="txt_valorRecebido" alignment="BOTTOM_RIGHT" layoutX="378.0" layoutY="594.0" prefHeight="80.0" prefWidth="390.0" text="0,00">
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="378.0" layoutY="594.0" prefHeight="35.0" prefWidth="390.0" style="-fx-background-color: #003f6b;" text="TOTAL RECEBIDO" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="lbl_troco" alignment="BOTTOM_RIGHT" layoutX="792.0" layoutY="594.0" prefHeight="80.0" prefWidth="390.0" style="-fx-background-color: WHITE;" text="0,00" textFill="#003f6b">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="792.0" layoutY="594.0" prefHeight="35.0" prefWidth="390.0" style="-fx-background-color: #003f6b;" text="TROCO" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="btn_buscarProduto" layoutX="312.0" layoutY="246.0" mnemonicParsing="false" onAction="#buscaProduto" text="Button" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

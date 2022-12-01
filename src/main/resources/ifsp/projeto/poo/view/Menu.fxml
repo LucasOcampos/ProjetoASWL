@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifsp.projeto.poo.controller.MenuController">
+   <children>
+      <MenuBar prefWidth="700.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastro">
+            <items>
+              <MenuItem fx:id="menuItem_cadastroProdutos" mnemonicParsing="false" onAction="#abriTelaProduto" text="Produtos" />
+                  <MenuItem fx:id="menuItem_CadastroUsuario" mnemonicParsing="false" onAction="#abriTelaUsuario" text="Usuários" />
+                  <MenuItem fx:id="menuItem_cadastroFornecedores" mnemonicParsing="false" onAction="#abriTelaFornecedores" text="Fornecedores" />
+                  <MenuItem fx:id="menuItem_cadastroCategoria" mnemonicParsing="false" onAction="#abriTelaCategoria" text="Categoria" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Processos">
+            <items>
+              <MenuItem fx:id="menuItem_processosVendas" mnemonicParsing="false" onAction="#abriTelaDeVendas" text="Vendas" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Gráficos">
+            <items>
+              <MenuItem fx:id="menuItem_graficosMensal" mnemonicParsing="false" text="Venda Mensal" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Relatorios">
+               <items>
+                  <MenuItem fx:id="menuItem_relatoriosValorTotalEstoque" mnemonicParsing="false" text="Valor Total Estoque" />
+                  <MenuItem fx:id="menuItem_relatoriosValorTotalPorCategoria" mnemonicParsing="false" text="Valor Total por Categoria" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorPane" prefHeight="748.0" prefWidth="700.0">
+         <children>
+            <Label layoutX="6.0" layoutY="14.0" prefHeight="55.0" prefWidth="1200.0" style="-fx-background-color: #003f6b;" text="      LUIS ROYO - PDV" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="693.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="137.0" layoutY="40.0" text="SISTEMAS ERP" textFill="WHITE" />
+         </children></AnchorPane>
+   </children>
+</VBox>
